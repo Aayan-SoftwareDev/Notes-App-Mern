@@ -25,7 +25,7 @@ app.use("/api/notes", notesRoutes);
 if(process.env.NODE_ENV == "production") {
     app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
-    app.get("/:path*", (_, res) => {
+    app.get("(.*)", (_, res) => {
         res.sendFile(__dirname, "../frontend", "dist", "index.html");
 });
 }
