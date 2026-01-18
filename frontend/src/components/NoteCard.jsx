@@ -12,7 +12,7 @@ const NoteCard = ({note, setNotes}) => {
       api.delete(`/notes/${id}`);
       toast.success("Note Deleted Successfuly!");
       setNotes((prev) => prev.filter((note) => note._id !== id));
-    } catch(e) {
+    } catch(error) {
       console.log("Error in handleDelete", error);
       toast.error("Failed to delete Note");
     }
